@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Calculadora</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+            var res;
+            var d1;
+            var d2;
+            function suma() {
+                d1 = document.getElementById("dato1").value;
+                d2 = document.getElementById("dato2").value;
+                res = parseInt(d1) + parseInt(d2);
+                document.getElementById("res").value = res;
+            }
+            function resta() {
+                d1 = document.getElementById("dato1").value;
+                d2 = document.getElementById("dato2").value;
+                res = d1 - d2;
+                document.getElementById("res").value = res;
+            }
+            function mult() {
+                d1 = document.getElementById("dato1").value;
+                d2 = document.getElementById("dato2").value;
+                res = d1 * d2;
+                document.getElementById("res").value = res;
+            }
+            function div() {
+                d1 = document.getElementById("dato1").value;
+                d2 = document.getElementById("dato2").value;
+                res = d1 / d2;
+                document.getElementById("res").value = res;
+            }
+        </script>
+    </head>
+
+    <body>
+        <div>
+            <h1>Calculadora con Servlet</h1>
+            Introduzca los datos:<br>
+
+            <form method="POST" action="calculadora.jsp">
+                <input autocomplete="off" type="text"  id="dato1" name="dato1" placeholder="Numero 1"><br>
+                <input autocomplete="off" type="text" id="dato2" name="dato2" placeholder="Nuemro2"><br>
+
+                Operaciones:<br>
+                <input type="submit" name="Suma" value="Suma" onclick="suma()">&nbsp;
+                <input type="submit" name="Resta" value="Resta" onclick="resta()">&nbsp;
+                <input type="submit" name="Multiplicacion" value="Multiplicacion" onclick="mult()">&nbsp;
+                <input type="submit" name="Division" value="Division" onclick="div()">&nbsp;
+
+                <input id="res" name="res" type="text" hidden="hidden" >
+
+            </form>
+
+        </div>
+    </body>
+</html>
